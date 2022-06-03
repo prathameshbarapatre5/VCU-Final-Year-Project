@@ -1,0 +1,79 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+		
+<body>
+	<div class="backgroundcolor">
+		<div class="odometer">
+			<div class="circle">
+				<div class="speed"><strong>{{speed}}</strong><br> KMPH</div>
+			</div>
+			<div class="circle">
+				<div class="rpm"><strong>{{rpm}}</strong> <br> RPM</div>
+			</div>
+			<svg>
+				<filter id="wavy">
+					<feTurbulence x="0" basefrequency="0.00" numOctaves="5" seed="2">
+						<animate attributeName="baseFrequency" dur="100s" values="0;0;0" repeatCount="indefinite">
+					</feTurbulence>
+					<feDisplacementMap in="SourceGraphic" scale="30">
+				</filter>
+			</svg>
+		</div>
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15068.361869617545!2d73.11440351977538!3d19.234888650000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1612244915154!5m2!1sen!2sin" width="643" height="288" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		</div>
+		<div class="energy">
+			<div class="box"></div>
+			<div class="energytext">ENERGY</div>
+			<div class="energycount"><strong>{{energy}}</strong> %</div>
+		</div>
+		<div class="range">
+			<div class="box"></div>
+			<div class="rangetext">RANGE</div>
+			<div class="rangecount"><strong>{{range}}</strong> km</div>
+		</div>
+		<div class="temperature">
+			<div class="box"></div>
+			<div class="temperaturetext">TEMPERATURE</div>
+			<div class="temperaturecount"><strong>{{temperature}}</strong>°C</div>
+		</div>
+		<div class="start">
+			<button id="button" class="button"></button>
+        	<div class="button-circle"></div>
+   			<div class="buttontext">START / STOP</div>
+			
+			<script>
+				const button = document.querySelector("#button")
+				const buttonCircle = document.querySelector(".button-circle")
+					button.addEventListener("click",()=>{
+    				button.classList.toggle('button-On')
+    				buttonCircle.classList.toggle("button-circle-On")
+
+    			if(button.classList.contains("button-On")){
+      				button.innerHTML=""
+   				}else{
+       				 button.innerHTML=""
+    			}
+				})
+			</script>
+		</div>
+
+<script>
+var a = 20;
+var b = 30;
+if (a > b) {
+alert("Warning ! Battery Heated");
+}
+</script>
+<script>
+var c = 40;
+var d = 50;
+if (c>d) {
+alert ("Overspeeding!!!");
+}
+</script>
+</body>
+</html>
