@@ -2,6 +2,8 @@
 
 ### **Vehicle Control Unit for Electric Vehicle**
 
+**Final Year Mechatronics Engineering Project**
+
 **Authors:** Mr. Prathmesh Barapatre, Mr. Rohit Acharekar, Mr. Tejas Panchal, Ms. Anupreeti Mahadik
 
 This repository contains Python code for a Vehicle Control Unit (VCU) developed as a final year project. The VCU is built on a Flask RESTful API and renders HTML and CSS for a web-based interface that displays vehicle parameters.
